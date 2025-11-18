@@ -3,6 +3,31 @@
 This repository contains a React + Vite frontend (`Aarogya/`) and a Node/Express + MySQL backend (`backend/`).
 This README explains how to set up the project from scratch, initialize the database (SQL), and run both frontend and backend for development and production.
 
+## Project Concept
+
+M-Aarogya is a lightweight pathology lab management system that connects patients, doctors and labs. The core goals are:
+
+- Provide patients with a simple dashboard to view and download lab reports.
+- Allow doctors to search patients and view patient reports.
+- Let authorized lab users upload test reports and update report statuses.
+- Provide an Admin panel to manage users, approve registrations for doctors/labs, and view system statistics.
+
+The app is split into a frontend single-page application (React) and a RESTful backend (Express + MySQL). The backend exposes APIs for authentication, report upload, patient management and admin operations. The frontend consumes those APIs and provides role-based UI flows.
+
+## Tech Stack
+
+- Frontend: Vite, React, TypeScript (mix of .tsx and .jsx files), Tailwind-like utility-first classes (project uses utility classes in components)
+- UI / Components: Radix UI primitives and custom components under `src/components/ui`
+- Icons: `lucide-react`
+- State / Data fetching: React + optional react-query (present in package.json)
+- Backend: Node.js, Express.js
+- Database: MySQL (mysql2 driver). Schema available in `backend/src/config/schema.sql` and backend attempts auto-creation on startup.
+- Authentication: JWT (jsonwebtoken) and bcryptjs for password hashing
+- File uploads: `multer` — uploaded files stored under `uploads/`
+- Development tooling: Vite (frontend), nodemon (backend dev), http-server (optional static preview)
+
+---
+
 ## Contents
 - `Aarogya/` — Frontend (Vite + React + TypeScript)
 - `backend/` — Backend (Node, Express, MySQL)
